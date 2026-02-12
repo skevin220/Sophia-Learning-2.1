@@ -28,10 +28,16 @@ function clearCartAlert() {
 }
 
 function processOrderAlert() {
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
   sessionStorage.removeItem("cart");
   alert("Thank you for your order.");
 }
-
 
 function messageAlert(event) {
   event.preventDefault();
