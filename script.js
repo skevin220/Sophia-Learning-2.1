@@ -23,9 +23,17 @@ function viewCart() {
 }
 
 function clearCartAlert() {
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    alert("Your cart is already empty.");
+    return;
+  }
+
   sessionStorage.removeItem("cart");
   alert("Cart cleared.");
 }
+
 
 function processOrderAlert() {
   let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
