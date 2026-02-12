@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABC Fitness Studio - Gallery</title>
 </head>
@@ -20,10 +21,15 @@
 
     <main>
 
-        <section>
-            <button type="button">View Cart</button>
-            <p><em>Note: Shopping cart functionality will be added in a later task.</em></p>
-        </section>
+    <section>
+    <button type="button" onclick="viewCart()">View Cart</button>
+
+    <button type="button" onclick="clearCartAlert()">Clear Cart</button>
+    <button type="button" onclick="processOrderAlert()">Process Order</button>
+
+    <p><em>Note: Shopping cart functionality will be added in a later task.</em></p>
+</section>
+
 
         <section>
             <h2>Programs and Services</h2>
@@ -49,7 +55,8 @@
                         </td>
                         <td>One-on-one coaching tailored to your goals with a certified trainer.</td>
                         <td>$60</td>
-                        <td><button type="button">Add to Cart</button></td>
+                        <td><button type="button" onclick="addToCartAlert('Personal Training Session')">Add to Cart</button></td>
+
                     </tr>
 
                     <tr>
@@ -59,7 +66,8 @@
                         </td>
                         <td>High-energy class environment designed for motivation and results.</td>
                         <td>$15</td>
-                        <td><button type="button">Add to Cart</button></td>
+                        <td><button type="button" onclick="addToCartAlert('Group Fitness Class')">Add to Cart</button></td>
+
                     </tr>
 
                     <tr>
@@ -69,7 +77,8 @@
                         </td>
                         <td>Unlimited facility access during business hours, including equipment and locker rooms.</td>
                         <td>$45</td>
-                        <td><button type="button">Add to Cart</button></td>
+                        <td><button type="button" onclick="addToCartAlert('Monthly Gym Membership')">Add to Cart</button></td>
+
                     </tr>
 
                     <tr>
@@ -79,7 +88,7 @@
                         </td>
                         <td>Meet with a coach to build a simple nutrition plan that fits your routine.</td>
                         <td>$40</td>
-                        <td><button type="button">Add to Cart</button></td>
+                        <td><button type="button" onclick="addToCartAlert('Nutrition Consultation')">Add to Cart</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -104,7 +113,8 @@
             <a href="custom.html">Community</a>
         </p>
         <p>&copy; 2026 ABC Fitness Studio</p>
+        <button type="button" onclick="subscribeAlert()">Subscribe</button>
     </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
