@@ -48,15 +48,25 @@ function processOrderAlert() {
 }
 
 function messageAlert(event) {
+  const form = event.target.form || document.querySelector("form");
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
   event.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("request").value;
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("request").value.trim();
 
   localStorage.setItem("customerName", name);
   localStorage.setItem("customerEmail", email);
   localStorage.setItem("customerMessage", message);
 
   alert("Thank you for your message.");
+
+  form.reset();
 }
+
